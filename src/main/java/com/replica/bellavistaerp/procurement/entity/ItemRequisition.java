@@ -1,5 +1,7 @@
 package com.replica.bellavistaerp.procurement.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import com.replica.bellavistaerp.procurement.enums.RequisitionStatus;
 
 import jakarta.persistence.*;
@@ -12,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "item_requisitions")
 @Getter

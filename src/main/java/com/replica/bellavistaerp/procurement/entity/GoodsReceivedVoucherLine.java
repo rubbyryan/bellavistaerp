@@ -1,5 +1,8 @@
 package com.replica.bellavistaerp.procurement.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 import lombok.Getter;
@@ -9,6 +12,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "goods_received_voucher_lines")
 @Getter
@@ -23,6 +27,8 @@ public class GoodsReceivedVoucherLine {
     // ---------------------------------------------------------
     // GRV RELATIONSHIP
     // ---------------------------------------------------------
+
+    @JsonIgnore
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "grv_id", nullable = false)

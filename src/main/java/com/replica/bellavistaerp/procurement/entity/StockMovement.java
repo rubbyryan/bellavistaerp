@@ -1,5 +1,7 @@
 package com.replica.bellavistaerp.procurement.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 import lombok.Getter;
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
 
 import com.replica.bellavistaerp.procurement.enums.StockMovementType;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "stock_movements")
 @Getter

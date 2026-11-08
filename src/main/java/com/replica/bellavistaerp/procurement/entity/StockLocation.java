@@ -1,11 +1,14 @@
 package com.replica.bellavistaerp.procurement.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "stock_locations")
 @Getter

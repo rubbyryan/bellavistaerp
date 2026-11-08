@@ -1,12 +1,16 @@
 
 package com.replica.bellavistaerp.procurement.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "item_requisition_lines")
 @Getter
@@ -17,6 +21,8 @@ public class ItemRequisitionLine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonIgnore
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "requisition_id", nullable = false)
